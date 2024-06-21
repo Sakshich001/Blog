@@ -1,28 +1,24 @@
-Rollback strategies:
+## Rollback Strategy for Infrastructure Changes
 
-For Kubernetes:
+**Rolling back infrastructure changes is crucial to maintain application availability and stability.**
 
-1. Use Kubernetes deployments with the `--record` flag to keep a history of rollouts:
-   ```
-   kubectl apply -f backend.yaml --record
-   kubectl apply -f frontend.yaml --record
-   ```
-3. To rollback, use:
-   ``` 
-   kubectl rollout undo deployment/backend
-   kubectl rollout undo deployment/frontend
-   ```
-For Terraform:
+Here’s a structured approach to rollback strategy:
 
-1. Use version control (e.g., Git) for your Terraform code.
+**1.Monitoring and Alerts:**
+   Implement monitoring and alerting mechanisms to detect issues promptly. Monitor metrics such as application health, performance, and resource usage.
+   
+**2.Automated Rollback Policy:**
+Define automated rollback policies triggered by predefined conditions (e.g., increased error rates, service unavailability).
+Kubernetes provides features like readiness and liveness probes which can automatically trigger rollback if the application fails health checks during deployment.
 
-2. Before applying changes, create a backup of your current state:
-   `cp terraform.tfstate terraform.tfstate.backup`
+**3.Rollback Steps**:
+If an issue is detected post-deployment:
+- Identify the Issue: Use monitoring tools and logs to identify the root cause of the problem.
+   - Rollback Execution: Use kubectl rollout undo command to revert to the previous known good version of deployments.
+   - Verification: Verify that the rollback was successful and the application stability is restored.
+  
+**4.Testing Rollback Procedures:**
+Regularly simulate rollback scenarios in a staging environment to ensure that rollback procedures are well-documented, understood, and effective.
 
-3. To rollback, revert your Git changes and restore the state:
-   ``` 
-   git checkout <previous_commit>
-   mv terraform.tfstate.backup terraform.tfstate
-   terraform plan
-   terraform apply
-   ```
+**5.Post-Rollback Analysis:**
+Conduct a post-mortem analysis to understand the cause of the issue and implement preventive measures to avoid similar incidents in the future.
