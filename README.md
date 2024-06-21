@@ -71,7 +71,7 @@ The TechDome application follows a microservices architecture, consisting of thr
    ```
 
 
-### Deploy on cloud (AWS)
+### Deploy on cloud (AWS) using Terraform
 ## Usage
 
 1. Navigate to the desired environment directory (e.g., `environments/dev`)
