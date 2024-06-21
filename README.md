@@ -109,7 +109,7 @@ Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remot
 **Cause**: The frontend application attempted to access the backend API without the necessary CORS configuration.
 
 ### 2. Faced challenges due to limited familiarity with writing tests for Terraform using the Terraform test framework.
-**Solution**: Overcame this challenge by watching video tutorials and official documentation.
+**Solution**: Overcame this challenge by watching video tutorials and reading official documentation.
 
 ## Conclusion
 
