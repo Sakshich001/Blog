@@ -103,7 +103,7 @@ When implementing Kubernetes secrets, the application faced a CORS error:
 
 ```
 Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote resource at http://localhost:8080/api/get_blog. (Reason: CORS request did not succeed). Status code: (null).
-Object { stack: "fr@http://192.168.49.2:32081/static/js/main.a16b5dbf.js:2:278965\nQr.xhr</</u.onerror@http://192.168.49.2:32081/static/js/main.a16b5dbf.js:2:294206\n", message: "Network Error", name: "AxiosError", code: "ERR_NETWORK", config: {…}, request: XMLHttpRequest }
+
 ```
 
 **Cause**: The frontend application attempted to access the backend API without the necessary CORS configuration.
