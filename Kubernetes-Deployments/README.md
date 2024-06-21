@@ -42,7 +42,7 @@
    ```
 4. **Scale the application** (You can adjust the number of replicas either dynamically or by modifying the manifest files directly) :
    ```bash
-   kubectl scale deployment frontend --replicas=3 #Change the no of replicas as you need
-   kubectl scale deployment backend --replicas=3  #Change the no of replicas as you need
+   kubectl scale deployment frontend --replicas=3 #Adjust the no. of replicas if you want
+   kubectl scale deployment backend --replicas=3 #Adjust the no. of replicas if you want 
    ```
 
