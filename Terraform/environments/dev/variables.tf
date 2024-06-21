@@ -28,12 +28,22 @@ variable "public_subnets" {
   type        = list(string)
 }
 
-variable "cluster_version" {
-  description = "EKS cluster version"
+variable "frontend_instance_type" {
+  description = "EC2 instance type for frontend"
   type        = string
 }
 
-variable "node_groups" {
-  description = "EKS node groups configuration"
-  type        = any
+variable "backend_instance_type" {
+  description = "EC2 instance type for backend"
+  type        = string
+}
+
+variable "database_instance_type" {
+  description = "EC2 instance type for database"
+  type        = string
+}
+
+variable "key_name" {
+  description = "Name of the EC2 key pair"
+  type        = string
 }

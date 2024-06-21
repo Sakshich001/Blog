@@ -1,42 +1,36 @@
 variable "name" {
-  description = "Name of the VPC"
+  description = "Name to be used on all the resources as identifier"
   type        = string
 }
 
 variable "cidr" {
-  description = "CIDR block for the VPC"
+  description = "The CIDR block for the VPC"
   type        = string
 }
 
 variable "azs" {
-  description = "Availability Zones"
+  description = "A list of availability zones names in the region"
   type        = list(string)
 }
 
 variable "private_subnets" {
-  description = "Private subnet CIDR blocks"
+  description = "A list of private subnets inside the VPC"
   type        = list(string)
 }
 
 variable "public_subnets" {
-  description = "Public subnet CIDR blocks"
+  description = "A list of public subnets inside the VPC"
   type        = list(string)
 }
 
 variable "enable_nat_gateway" {
-  description = "Enable NAT Gateway"
+  description = "Should be true if you want to provision NAT Gateways for each of your private networks"
   type        = bool
-  default     = true
+  default     = false
 }
 
 variable "single_nat_gateway" {
-  description = "Use a single NAT Gateway"
+  description = "Should be true if you want to provision a single shared NAT Gateway across all of your private networks"
   type        = bool
-  default     = true
-}
-
-variable "tags" {
-  description = "Tags to apply to resources"
-  type        = map(string)
-  default     = {}
+  default     = false
 }

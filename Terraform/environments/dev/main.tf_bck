@@ -20,6 +20,7 @@ module "ec2_frontend" {
   name                   = "${var.environment}-frontend"
   instance_type          = var.frontend_instance_type
   key_name               = var.key_name
+  vpc_id                 = module.vpc.vpc_id
   subnet_id              = module.vpc.public_subnets[0]
   vpc_security_group_ids = [aws_security_group.frontend.id]
   user_data              = file("${path.module}/../../scripts/user_data.sh")
@@ -36,6 +37,7 @@ module "ec2_backend" {
   name                   = "${var.environment}-backend"
   instance_type          = var.backend_instance_type
   key_name               = var.key_name
+  vpc_id                 = module.vpc.vpc_id
   subnet_id              = module.vpc.private_subnets[0]
   vpc_security_group_ids = [aws_security_group.backend.id]
   user_data              = file("${path.module}/../../scripts/user_data.sh")
@@ -52,6 +54,7 @@ module "ec2_database" {
   name                   = "${var.environment}-database"
   instance_type          = var.database_instance_type
   key_name               = var.key_name
+  vpc_id                 = module.vpc.vpc_id
   subnet_id              = module.vpc.private_subnets[1]
   vpc_security_group_ids = [aws_security_group.database.id]
   user_data              = file("${path.module}/../../scripts/user_data.sh")
