@@ -93,6 +93,16 @@ The TechDome application follows a microservices architecture, consisting of thr
    ```bash
    terraform destroy
    ``` 
+### OutPut
+
+### Docker Compose 
+
+![image](https://github.com/Sakshich001/Blog/assets/71651459/f92d33d2-2f09-41f3-a2a1-3aa36d98e06f)
+
+![image](https://github.com/Sakshich001/Blog/assets/71651459/b0283c99-6dbd-460b-a455-fe3be5d91abc)
+
+### Kubernetes
+![image](https://github.com/Sakshich001/Blog/assets/71651459/a9ddab60-73e3-4f81-af67-46d9ff1da42b)
 
 
 ## Challenges Faced
